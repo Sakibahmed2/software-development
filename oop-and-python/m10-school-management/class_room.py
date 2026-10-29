@@ -10,11 +10,12 @@ class ClassRoom:
         self.students.append(student)
 
     def add_subject(self, subject):
-        self.subjects.append(self.subjects)
+        self.subjects.append(subject)
 
     def take_sem_final_exam(self):
         for subject in self.subjects:
             subject.exam(self.students)
+    
         for student in self.students:
             student.final_grade()
         
