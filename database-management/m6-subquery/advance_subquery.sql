@@ -29,3 +29,11 @@ WHERE job_id = (
     SELECT job_id FROM employees AS mgr
     WHERE emp.employee_id = mgr.employee_id
 );
+
+
+WITH EMP_TEMP AS (
+    SELECT * FROM employees
+    LIMIT 5
+)
+
+SELECT * FROM `EMP_TEMP`;
