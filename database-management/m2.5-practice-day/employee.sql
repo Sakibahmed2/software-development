@@ -65,3 +65,18 @@ SELECT designation, AVG(salary)
     FROM employee
     GROUP BY designation
     HAVING AVG(salary) > 40000;
+
+
+CREATE FUNCTION get_heights_salary()
+RETURNS DECIMAL(10, 2)
+READS SQL DATA
+BEGIN
+      DECLARE max_sal DECIMAL(10, 2);
+    
+    SELECT MAX(salary) INTO max_sal 
+    FROM employee;
+    
+    RETURN max_sal;
+END;
+
+SELECT get_heights_salary();
